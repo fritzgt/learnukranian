@@ -76,4 +76,16 @@ class NetworkManager: ObservableObject {
         }
     }
     
+    //Delete method
+    func delete(data: [Categories]){
+        let document = data[0].id
+        print(data[0].title)
+        db.collection("subcat").document(document).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Deleted \(data[0].title)")
+            }
+        }
+    }
 }

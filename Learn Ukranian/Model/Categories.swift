@@ -9,7 +9,7 @@
 import Foundation
 
 //Creating struct for categories blueprint
-struct Categories: Identifiable {
+struct Categories: Identifiable, Hashable {
     //Identifiable protocol relies on the id to correctly
     //render items in the array in each List view
     let id: String

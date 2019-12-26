@@ -9,5 +9,7 @@
 import Foundation
 
 struct K {
-    static let imageTItle = "Українська мова"
+    static let bannerImage = "lviv"
+    static let bannerTItle = "Українська мова"
+    static let navTitle = "Welcome"
 }

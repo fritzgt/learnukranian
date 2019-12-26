@@ -13,8 +13,13 @@ import Firebase
 
 struct PostView: View {
     
-   
+    //data comming to be edited
+    let post:  Categories?
     
+    //Use for modal to be dismiss after submit
+    @Environment(\.presentationMode) var presentationMode
+    
+    //Textfield variables
     @State var title: String = ""
     @State var trans: String = ""
     @State var pron: String = ""
@@ -25,8 +30,11 @@ struct PostView: View {
     
     var body: some View {
         
+        
         VStack{
+            Text("Create / Edit").padding()
             //input
+            
             Form {
                 TextField("Title", text: $title)
                 TextField("Trans", text: $trans)
@@ -36,9 +44,9 @@ struct PostView: View {
                 Toggle(isOn: $subcat) {
                     Text("SubCat")
                 }
-                
                 //Preview
                 VStack{
+                    Text("Preview")
                     HStack{
                         Image(systemName:image)
                             .font(.system(size: 30))
@@ -56,9 +64,21 @@ struct PostView: View {
                         }
                         
                     }
+                    .padding()
+                    .border(Color.gray, width: 2)
+                    
+                    
                     //Submit
+                    //if post exist its from edit else is adding a new item
                     Button(action: {
-                        self.postData()
+                        if (self.post != nil) {
+                            self.edit(id: self.post!.id)
+                        }else {
+                            self.postData()
+                        }
+                        
+                        //Use for modal to be dismiss after submit
+                        self.presentationMode.wrappedValue.dismiss()
                     }){
                         Text("Submit")
                             .foregroundColor(.white)
@@ -67,10 +87,23 @@ struct PostView: View {
                     }
                 }
             }
+        }//
+            .onAppear(perform: defaultValues)
+    }
+    
+    //prepopulate fields
+    func defaultValues() {
+        if post != nil {
+            self.title = post!.title
+            self.trans = post!.trans
+            self.pron = post!.pron
+            self.image = post!.image
+            self.catid  = post!.catid
         }
     }
     
     func postData(){
+        print("Post")
         //Initializing Firestore
         let db = Firestore.firestore()
         
@@ -100,20 +133,44 @@ struct PostView: View {
                 //we must use DispatchQueue.main.async so the action
                 //happens in the foreground instead of the background
                 DispatchQueue.main.async {
-                    self.title = "";
-                    self.trans = "";
-                    self.pron = "";
-                    self.image = "";
+                    self.title = ""
+                    self.trans = ""
+                    self.pron = ""
+                    self.image = ""
                     self.catid  = ""
                 }
-                
             }
         }
     }//end of postData func
+    
+    //Update method
+    func edit(id: String){
+        print("Edit")
+        
+        let db = Firestore.firestore()
+        
+        // Add a new document in collection "cities"
+        db.collection("subcat").document(id).setData([
+            "title": title,
+            "trans": trans,
+            "pron": pron,
+            "image": image,
+            "catid": catid
+        ]) { err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+            }
+        }
+    }
+    
+    
+    
 }
 
 struct PostView_Previews: PreviewProvider {
     static var previews: some View {
-        PostView()
+        PostView(post: nil)
     }
 }
