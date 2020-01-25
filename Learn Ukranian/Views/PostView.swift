@@ -29,7 +29,7 @@ struct PostView: View {
     
     
     var body: some View {
-        
+    
         
         VStack{
             Text("Create / Edit").padding()
@@ -81,9 +81,11 @@ struct PostView: View {
                         self.presentationMode.wrappedValue.dismiss()
                     }){
                         Text("Submit")
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
                             .padding()
-                            .background(Color.green)
+                            .background(Color.blue)
+                            .cornerRadius(CGFloat(10))
                     }
                 }
             }
@@ -91,6 +93,7 @@ struct PostView: View {
             .onAppear(perform: defaultValues)
     }
     
+
     //prepopulate fields
     func defaultValues() {
         if post != nil {
@@ -101,6 +104,10 @@ struct PostView: View {
             self.catid  = post!.catid
         }
     }
+    
+    
+    //MARK: -  Post method
+    
     
     func postData(){
         print("Post")
@@ -143,7 +150,8 @@ struct PostView: View {
         }
     }//end of postData func
     
-    //Update method
+    //MARK: -  Update method
+    
     func edit(id: String){
         print("Edit")
         

@@ -55,16 +55,21 @@ struct CatView: View {
             }
             //Creating a closure for delete
             //passing the data array and returning selected item
-        }.onDelete {
+        } 
+         .onDelete {
             self.networkManager.delete(data: $0.map{
                 return  self.networkManager.dataCat[$0]
             })
             }
+        
         }
         .onAppear{
             self.networkManager.createQuery(collection: "subcat", id: self.catId)
+        //set the separator line to clear on the list
+//            UITableView.appearance().separatorColor = .clear
         }
     }
+    
     
     
     

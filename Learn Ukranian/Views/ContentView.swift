@@ -12,88 +12,93 @@ struct ContentView: View {
     //Use for the add modal to be invoke or dismiss
     @State private var show_modal: Bool = false
     
+    @State var selectedView = 0
+    
+    @State private var search: String = ""
+    
     //Initialting netWorkManager
     @ObservedObject var networkManager = NetworkManager()
     
     var body: some View {
         
-        //Enable NavBar 
-        HStack {
-            NavigationView {
-                
-                //Vertical stack for alyout view
-                VStack{
-                    //                    ZStack {
-                    //                        //Main banner image
-                    //                        Image(K.bannerImage)
-                    //                            .resizable()
-                    //                            .aspectRatio(contentMode: .fit)
-                    //                            .frame(height:230)
-                    //                            .cornerRadius(10)
-                    //                        Text(K.bannerTItle)
-                    //                            .font(.largeTitle)
-                    //                            .padding(.top, 5)
-                    //                            .padding(.bottom, 5)
-                    //                            .padding(.horizontal, 45)
-                    //                            .background(Color.black.opacity(0.5))
-                    //                            .foregroundColor(.white)
-                    //                    }
-                    //Create a modal to add new content
-                    Button(action: {
-                        self.show_modal = true
-                    }) {
-                        Text("+")
-                            .foregroundColor(.gray)
-                    }.sheet(isPresented: self.$show_modal) {
-                        PostView(post: nil)
-                    }
-                    
-                    //List of categories to choose from
-                    List(networkManager.dataCat){post in
-                        //Creating links to take user to subcategories
-                        NavigationLink(destination: CatView(catId: post.catid)) {
-                            //                            HStack {
-                            //                                Image(post.image)
-                            //                                    .resizable()
-                            //                                    .aspectRatio(contentMode: .fit)
-                            //                                    .frame(height:80)
-                            //                                    .cornerRadius(5)
-                            //                                VStack{
-                            //                                    Text(post.title)
-                            //                                        .font(.system(size: 18))
-                            //                                    Text(post.trans)
-                            //                                        .foregroundColor(.gray)
-                            //                                        .font(.system(size: 14))
-                            //                                    Text(post.pron)
-                            //                                        .foregroundColor(.gray)
-                            //                                        .font(.system(size: 14))
-                            //                                }
-                            //                            }
-                            
-                            ZStack {
-                                //Main banner image
-                                Image(post.image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(height:200)
-                                    .cornerRadius(20)
-                                Text(post.title)
-                                    .font(.largeTitle)
-                                    .padding(.top, 5)
-                                    .padding(.bottom, 5)
-                                    .padding(.horizontal, 75)
-                                    .background(Color.black.opacity(0.5))
-                                    .foregroundColor(.white)
+        //Enable NavBar
+        
+        VStack {
+            TabView(selection: $selectedView){
+                HStack {
+                    NavigationView {
+                        //Vertical stack for layout view
+                        VStack{
+                            //Search field
+                            //                            TextField("Search", text: $search)
+                            //                                .textFieldStyle(RoundedBorderTextFieldStyle()).padding()
+                            List(networkManager.dataCat){post in
+                                //Creating links to take user to subcategories
+                                NavigationLink(destination: CatView(catId: post.catid)) {
+                                    ZStack {
+                                        //Main banner image
+                                        Image(post.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(height:200)
+                                            .cornerRadius(20)
+                                        Text(post.title)
+                                            .font(.largeTitle)
+                                            .padding(.top, 5)
+                                            .padding(.bottom, 5)
+                                            .padding(.horizontal, 75)
+                                            .background(Color.black.opacity(0.5))
+                                            .foregroundColor(.white)
+                                    }
+                                }
+                                    //Welcome title on top of the page
+                                    .navigationBarTitle(K.bannerTItle)
+                                    .navigationBarItems(trailing:
+                                        Button(action: {
+                                            self.show_modal = true
+                                        }) {
+                                            Image(systemName: "plus").imageScale(.large)
+                                        }.sheet(isPresented: self.$show_modal) {
+                                            PostView(post: nil)
+                                        }
+                                )
+                                
                             }
-                        }
-                            //Welcome title on top of the page
-                            .navigationBarTitle(K.bannerTItle)
+                            
+                        }//1st vstack ends
+                        
                     }
-                }//vstack ends
-            }
-                //When view loads will call the loadData method
-                .onAppear{
-                    self.networkManager.createQuery(collection: "categories", id: nil)
+                        //When view loads will call the loadData method
+                        .onAppear{
+                            self.networkManager.createQuery(collection: "categories", id: nil)
+                            //set the separator line to clear on the list
+                            UITableView.appearance().separatorColor = .clear
+                    }
+                }//end of 2nd vstack
+                    .tabItem {
+                        Image(systemName: "bubble.left")
+                        Text("Home")
+                }.tag(0)
+                //Second View (BOOKMARKS)
+                Text("Translate")
+                    .tabItem {
+                        Image(systemName: "mic")
+                        Text("Translate")
+                }.tag(1)
+                //Second View (BOOKMARKS)
+                BookmarkView()
+                    .tabItem {
+                        Image(systemName: "bookmark")
+                        Text("Bookmarks")
+                }.tag(2)
+                
+                //Second View (SETTINGS)
+                Text("Settings View")
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Settings")
+                }.tag(3)
+                
             }
         }
     }
