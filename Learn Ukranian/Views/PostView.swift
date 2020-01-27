@@ -29,7 +29,7 @@ struct PostView: View {
     
     
     var body: some View {
-    
+        
         
         VStack{
             Text("Create / Edit").padding()
@@ -49,23 +49,23 @@ struct PostView: View {
                     Text("Preview")
                     HStack{
                         Image(systemName:image)
-                            .font(.system(size: 30))
-                            .foregroundColor(.gray)
+                            .font(.system(size: 35))
+                            .aspectRatio(contentMode: .fill)
                         Text(title)
-                            .font(.system(size: 18))
+                        Spacer()
                         Spacer()
                         VStack{
                             Text(trans)
-                                .font(.system(size: 18))
-                                .padding(.bottom, 10)
+                            Spacer()
                             Text(pron)
-                                .foregroundColor(.gray)
-                                .font(.system(size: 14))
                         }
                         
-                    }
-                    .padding()
-                    .border(Color.gray, width: 2)
+                    }.padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                .fill(Color.red)
+                    ).foregroundColor(.white)
+                    
                     
                     
                     //Submit
@@ -93,7 +93,7 @@ struct PostView: View {
             .onAppear(perform: defaultValues)
     }
     
-
+    
     //prepopulate fields
     func defaultValues() {
         if post != nil {

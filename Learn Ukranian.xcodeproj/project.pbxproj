@@ -7,38 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041B05A623DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 041B05A423DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld */; };
 		0473A88523AE125B00CCA828 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473A88423AE125B00CCA828 /* CatView.swift */; };
 		0473A88923AE591200CCA828 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0473A88823AE591200CCA828 /* GoogleService-Info.plist */; };
 		0473A88B23AE6EAE00CCA828 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473A88A23AE6EAE00CCA828 /* NetworkManager.swift */; };
+		048E6A6223DC62CC0010F50D /* LearnSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E6A6123DC62CC0010F50D /* LearnSettings.swift */; };
 		049B4CFC23B06FE7007BC770 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B4CFB23B06FE7007BC770 /* PostView.swift */; };
 		04A55F3623ADE8D90055E33D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A55F3523ADE8D90055E33D /* Categories.swift */; };
+		04A6343E23DE0ABE000CF34D /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6343D23DE0ABE000CF34D /* Search.swift */; };
+		04A6344023DEC34A000CF34D /* LearnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6343F23DEC34A000CF34D /* LearnMain.swift */; };
 		04ADC50F23DC322900305695 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ADC50E23DC322900305695 /* BookmarkView.swift */; };
 		04CF4B2023ACA00100ABBD4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF4B1F23ACA00100ABBD4B /* AppDelegate.swift */; };
 		04CF4B2223ACA00100ABBD4B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF4B2123ACA00100ABBD4B /* SceneDelegate.swift */; };
-		04CF4B2423ACA00200ABBD4B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CF4B2323ACA00200ABBD4B /* ContentView.swift */; };
 		04CF4B2623ACA00B00ABBD4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CF4B2523ACA00B00ABBD4B /* Assets.xcassets */; };
 		04CF4B2923ACA00B00ABBD4B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CF4B2823ACA00B00ABBD4B /* Preview Assets.xcassets */; };
 		04CF4B2C23ACA00B00ABBD4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CF4B2A23ACA00B00ABBD4B /* LaunchScreen.storyboard */; };
 		04D933F523B2258600D81FC5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D933F423B2258600D81FC5 /* Constants.swift */; };
+		04E681C423DEC63E001F5881 /* NavTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E681C323DEC63E001F5881 /* NavTabView.swift */; };
 		772C5B232C6B395708BD9C37 /* Pods_Learn_Ukranian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D8FE04C13663CD128D7416 /* Pods_Learn_Ukranian.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041B05A523DD5CE900ABD0D6 /* BookmarksData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookmarksData.xcdatamodel; sourceTree = "<group>"; };
 		0473A88423AE125B00CCA828 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
 		0473A88823AE591200CCA828 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0473A88A23AE6EAE00CCA828 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		048E6A6123DC62CC0010F50D /* LearnSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSettings.swift; sourceTree = "<group>"; };
 		049B4CFB23B06FE7007BC770 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		04A55F3523ADE8D90055E33D /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
+		04A6343D23DE0ABE000CF34D /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		04A6343F23DEC34A000CF34D /* LearnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMain.swift; sourceTree = "<group>"; };
 		04ADC50E23DC322900305695 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		04CF4B1C23ACA00100ABBD4B /* Learn Ukranian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learn Ukranian.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CF4B1F23ACA00100ABBD4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04CF4B2123ACA00100ABBD4B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04CF4B2323ACA00200ABBD4B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		04CF4B2523ACA00B00ABBD4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04CF4B2823ACA00B00ABBD4B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04CF4B2B23ACA00B00ABBD4B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04CF4B2D23ACA00B00ABBD4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04D933F423B2258600D81FC5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		04E681C323DEC63E001F5881 /* NavTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabView.swift; sourceTree = "<group>"; };
 		31D8FE04C13663CD128D7416 /* Pods_Learn_Ukranian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learn_Ukranian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42763E6E55D91BB3AFB772F5 /* Pods-Learn Ukranian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn Ukranian.debug.xcconfig"; path = "Target Support Files/Pods-Learn Ukranian/Pods-Learn Ukranian.debug.xcconfig"; sourceTree = "<group>"; };
 		A56871DF2F87CE894CE75D7B /* Pods-Learn Ukranian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn Ukranian.release.xcconfig"; path = "Target Support Files/Pods-Learn Ukranian/Pods-Learn Ukranian.release.xcconfig"; sourceTree = "<group>"; };
@@ -59,10 +67,13 @@
 		0473A88323AE123B00CCA828 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				04CF4B2323ACA00200ABBD4B /* ContentView.swift */,
-				049B4CFB23B06FE7007BC770 /* PostView.swift */,
+				04E681C323DEC63E001F5881 /* NavTabView.swift */,
+				04A6343F23DEC34A000CF34D /* LearnMain.swift */,
 				0473A88423AE125B00CCA828 /* CatView.swift */,
+				049B4CFB23B06FE7007BC770 /* PostView.swift */,
 				04ADC50E23DC322900305695 /* BookmarkView.swift */,
+				048E6A6123DC62CC0010F50D /* LearnSettings.swift */,
+				04A6343D23DE0ABE000CF34D /* Search.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -72,6 +83,7 @@
 			children = (
 				04A55F3523ADE8D90055E33D /* Categories.swift */,
 				0473A88A23AE6EAE00CCA828 /* NetworkManager.swift */,
+				041B05A423DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -252,14 +264,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E681C423DEC63E001F5881 /* NavTabView.swift in Sources */,
 				04ADC50F23DC322900305695 /* BookmarkView.swift in Sources */,
 				049B4CFC23B06FE7007BC770 /* PostView.swift in Sources */,
 				04CF4B2023ACA00100ABBD4B /* AppDelegate.swift in Sources */,
 				04A55F3623ADE8D90055E33D /* Categories.swift in Sources */,
+				041B05A623DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld in Sources */,
 				04CF4B2223ACA00100ABBD4B /* SceneDelegate.swift in Sources */,
 				0473A88B23AE6EAE00CCA828 /* NetworkManager.swift in Sources */,
-				04CF4B2423ACA00200ABBD4B /* ContentView.swift in Sources */,
+				04A6344023DEC34A000CF34D /* LearnMain.swift in Sources */,
 				0473A88523AE125B00CCA828 /* CatView.swift in Sources */,
+				04A6343E23DE0ABE000CF34D /* Search.swift in Sources */,
+				048E6A6223DC62CC0010F50D /* LearnSettings.swift in Sources */,
 				04D933F523B2258600D81FC5 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +472,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		041B05A423DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				041B05A523DD5CE900ABD0D6 /* BookmarksData.xcdatamodel */,
+			);
+			currentVersion = 041B05A523DD5CE900ABD0D6 /* BookmarksData.xcdatamodel */;
+			path = BookmarksData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04CF4B1423ACA00100ABBD4B /* Project object */;
 }
