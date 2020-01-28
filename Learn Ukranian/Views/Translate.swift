@@ -10,7 +10,6 @@ import SwiftUI
 import Speech
 
 
-
 struct Translate: View {
     
     @ObservedObject var closedCap = ClosedCaptioning()
@@ -20,7 +19,9 @@ struct Translate: View {
         VStack {
             Text("Translate").font(.title)
             Spacer()
-            Text(self.closedCap.captioning)
+         
+            Text(self.closedCap.translation).font(.system(size: 30, weight: .thin))
+            Text(self.closedCap.captioning) 
             Spacer()
             Button(action: { self.closedCap.micButtonTapped() }) {
                 Image(systemName: self.closedCap.isPlaying ? "mic.circle.fill" : "mic.circle").font(.system(size: 75, weight: .thin))

@@ -7,7 +7,12 @@
 //
 
 import Foundation
+//to transcript from audio to text
 import Speech
+
+//API to translate text
+import Firebase
+
 
 
 class ClosedCaptioning: ObservableObject{
@@ -16,10 +21,22 @@ class ClosedCaptioning: ObservableObject{
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    private let translator: Translator
     
-    @Published var captioning: String = "Waiting to Start!"
+    @Published var captioning: String = "Tap mic to Start!"
+    @Published var translation: String = ""
     @Published var isPlaying: Bool = false
     @Published var micEnabled: Bool = false
+    
+    
+    init (){
+      let options = TranslatorOptions(sourceLanguage: .en, targetLanguage: .uk)
+      translator = NaturalLanguage.naturalLanguage().translator(options: options)
+      translator.downloadModelIfNeeded { (error) in
+        guard error == nil else { return }
+        self.micEnabled = true
+      }
+    }
     
     //Thanks to https://developer.apple.com/documentation/speech/recognizing_speech_in_live_audio
     func startRecording() throws {
@@ -55,6 +72,16 @@ class ClosedCaptioning: ObservableObject{
                 isFinal = result.isFinal
                 print("Text \(result.bestTranscription.formattedString)")
                 self.captioning = result.bestTranscription.formattedString
+                
+                
+                //translate
+                self.translator.translate(result.bestTranscription.formattedString) { (translatedText, error) in
+                    guard error == nil,
+                        let translatedText = translatedText
+                        else { return }
+                    self.translation = translatedText
+                }
+                
             }
             
             if error != nil || isFinal {

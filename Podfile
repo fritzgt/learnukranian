@@ -10,5 +10,6 @@ target 'Learn Ukranian' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/MLNLTranslate'
   
 end
