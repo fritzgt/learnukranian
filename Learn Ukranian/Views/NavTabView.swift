@@ -24,7 +24,7 @@ struct NavTabView: View {
                         Text("Learn")
                 }.tag(0)
                 //Second View (BOOKMARKS)
-                Text("Translate")
+                Translate()
                     .tabItem {
                         Image(systemName: "mic")
                         Text("Translate")
