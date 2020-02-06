@@ -35,6 +35,7 @@ struct LearnSettings: View {
                         Toggle(isOn: self.$theme) {
                             Text(option.name).font(.system(size: 16))
                         }
+                       
                     }
                 }
             }

@@ -110,7 +110,7 @@ struct PostView: View {
     
     
     func postData(){
-        print("Post")
+//        print("Post")
         //Initializing Firestore
         let db = Firestore.firestore()
         

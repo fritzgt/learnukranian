@@ -19,13 +19,14 @@ struct CatView: View {
     //Initialting netWorkManager
     @ObservedObject var networkManager = NetworkManager()
     
-    //NOT IMPLEMENTED YET
-    var isBookmarked: String {
-        return "bookmark.fill"
-    }
+    //Use to read CoreData
+    @FetchRequest(entity: Posts.entity(), sortDescriptors: []) var corePosts: FetchedResults<Posts>
+    
     //get the catid from the selected categorie
     //This will be use to create query
     let catId: String
+    
+    @State private var booked = false
     
     var body: some View {
         List{ ForEach(networkManager.dataCat, id: \.self) {post in
@@ -56,15 +57,18 @@ struct CatView: View {
                 Spacer()
                 //3rd column inside cell
                 VStack{
-                    Image(systemName: self.isBookmarked)
+                    Image(systemName: self.booked ? "bookmark.fill" : "bookmark")
                         .onTapGesture {
+                            self.isBookmarked(for: post.id)
+                            
                             let newBookmark = Posts(context: self.moc)
-                            newBookmark.id = UUID()
+                            newBookmark.id = post.id
                             newBookmark.image = post.image
                             newBookmark.title = post.title
                             newBookmark.trans = post.trans
                             newBookmark.pron = post.pron
                             //Save data
+                            print("id \(post.id)")
                             do{
                                 try self.moc.save()
                             }catch{
@@ -93,7 +97,18 @@ struct CatView: View {
             //set the separator line to clear on the list
             //UITableView.appearance().separatorColor = .clear
         }
+        .navigationBarItems(trailing:
+            Button(action: {
+                self.show_modal = true
+            }) {
+                Image(systemName: "plus").imageScale(.large).padding()
+            }.sheet(isPresented: self.$show_modal) {
+                PostView(post: nil)
+            }
+        )
+            .navigationBarTitle(catId.capitalized)
     }
+    
     
     
     
@@ -101,6 +116,19 @@ struct CatView: View {
     struct CatView_Previews: PreviewProvider {
         static var previews: some View {
             CatView( catId: "cat1")
+        }
+    }
+    
+    
+    //NOT IMPLEMENTED YET
+    func isBookmarked(for id:String) {
+ 
+        for i in self.corePosts{
+            if id == i.id{
+                booked = true
+            }else{
+                booked = false
+            }
         }
     }
 }

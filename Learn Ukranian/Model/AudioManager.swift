@@ -28,7 +28,7 @@ class ClosedCaptioning: ObservableObject{
     @Published var isPlaying: Bool = false
     @Published var micEnabled: Bool = false
     
-    
+    //Initiating Firebase translation uk = Ukranian
     init (){
       let options = TranslatorOptions(sourceLanguage: .en, targetLanguage: .uk)
       translator = NaturalLanguage.naturalLanguage().translator(options: options)
@@ -70,15 +70,17 @@ class ClosedCaptioning: ObservableObject{
                 // ***We will update State here!***
                 // ??? = result.bestTranscription.formattedString
                 isFinal = result.isFinal
-                print("Text \(result.bestTranscription.formattedString)")
+//
+                //English Text
                 self.captioning = result.bestTranscription.formattedString
                 
                 
-                //translate
+                //Translating text
                 self.translator.translate(result.bestTranscription.formattedString) { (translatedText, error) in
                     guard error == nil,
                         let translatedText = translatedText
                         else { return }
+                    //Output of translated text
                     self.translation = translatedText
                 }
                 
