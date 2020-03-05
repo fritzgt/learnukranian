@@ -21,7 +21,7 @@ class NetworkManager: ObservableObject {
     
     
     //Method to create query base on the collection being requested
-    //THis will allow the reuse of the loadData method
+    //This will allow the reuse of the loadData method
     func createQuery(collection: String, id: String?) {
         
         switch collection {
@@ -71,7 +71,7 @@ class NetworkManager: ObservableObject {
                         //print("Data from loadData \(newCat)")
                     }
                 }
-                print("Completed Array \(self.dataCat)")
+//                print("Completed Array \(self.dataCat)")
             }
         }
     }

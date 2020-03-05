@@ -13,9 +13,9 @@ import Firebase
 
 struct PostView: View {
     
-    //data comming to be edited
+    //data coming to be edited
     let post:  Categories?
-    
+   
     //Use for modal to be dismiss after submit
     @Environment(\.presentationMode) var presentationMode
     
@@ -96,18 +96,18 @@ struct PostView: View {
     
     //prepopulate fields
     func defaultValues() {
-        if post != nil {
-            self.title = post!.title
-            self.trans = post!.trans
-            self.pron = post!.pron
-            self.image = post!.image
-            self.catid  = post!.catid
+       //If post is not nil then we prepopulate the textfields
+        if let post = post {
+            self.title = post.title
+            self.trans = post.trans
+            self.pron = post.pron
+            self.image = post.image
+            self.catid  = post.catid
         }
     }
     
     
     //MARK: -  Post method
-    
     
     func postData(){
 //        print("Post")

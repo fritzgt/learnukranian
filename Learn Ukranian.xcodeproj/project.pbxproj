@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		041B05A623DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 041B05A423DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld */; };
 		0473A88523AE125B00CCA828 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473A88423AE125B00CCA828 /* CatView.swift */; };
-		0473A88923AE591200CCA828 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0473A88823AE591200CCA828 /* GoogleService-Info.plist */; };
 		0473A88B23AE6EAE00CCA828 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0473A88A23AE6EAE00CCA828 /* NetworkManager.swift */; };
 		048E6A6223DC62CC0010F50D /* LearnSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048E6A6123DC62CC0010F50D /* LearnSettings.swift */; };
 		049B4CFC23B06FE7007BC770 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049B4CFB23B06FE7007BC770 /* PostView.swift */; };
+		04A52D9E24114D9500EB2D26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04A52D9D24114D9500EB2D26 /* GoogleService-Info.plist */; };
 		04A55F3623ADE8D90055E33D /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A55F3523ADE8D90055E33D /* Categories.swift */; };
 		04A6343E23DE0ABE000CF34D /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6343D23DE0ABE000CF34D /* Search.swift */; };
 		04A6344023DEC34A000CF34D /* LearnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A6343F23DEC34A000CF34D /* LearnMain.swift */; };
@@ -26,16 +26,16 @@
 		04E681C423DEC63E001F5881 /* NavTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E681C323DEC63E001F5881 /* NavTabView.swift */; };
 		04E681CD23E021D7001F5881 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E681CC23E021D7001F5881 /* AudioManager.swift */; };
 		04E681CF23E024E7001F5881 /* Translate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E681CE23E024E7001F5881 /* Translate.swift */; };
-		772C5B232C6B395708BD9C37 /* Pods_Learn_Ukranian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D8FE04C13663CD128D7416 /* Pods_Learn_Ukranian.framework */; };
+		8AC3AAC78769AF7E0E48F7FC /* Pods_Learn_Ukranian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B0A0D3B736340B95C1A121 /* Pods_Learn_Ukranian.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		041B05A523DD5CE900ABD0D6 /* BookmarksData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookmarksData.xcdatamodel; sourceTree = "<group>"; };
 		0473A88423AE125B00CCA828 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
-		0473A88823AE591200CCA828 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0473A88A23AE6EAE00CCA828 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		048E6A6123DC62CC0010F50D /* LearnSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnSettings.swift; sourceTree = "<group>"; };
 		049B4CFB23B06FE7007BC770 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		04A52D9D24114D9500EB2D26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		04A55F3523ADE8D90055E33D /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		04A6343D23DE0ABE000CF34D /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		04A6343F23DEC34A000CF34D /* LearnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMain.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		04E681C323DEC63E001F5881 /* NavTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavTabView.swift; sourceTree = "<group>"; };
 		04E681CC23E021D7001F5881 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		04E681CE23E024E7001F5881 /* Translate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translate.swift; sourceTree = "<group>"; };
-		31D8FE04C13663CD128D7416 /* Pods_Learn_Ukranian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learn_Ukranian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B0A0D3B736340B95C1A121 /* Pods_Learn_Ukranian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learn_Ukranian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		42763E6E55D91BB3AFB772F5 /* Pods-Learn Ukranian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn Ukranian.debug.xcconfig"; path = "Target Support Files/Pods-Learn Ukranian/Pods-Learn Ukranian.debug.xcconfig"; sourceTree = "<group>"; };
 		A56871DF2F87CE894CE75D7B /* Pods-Learn Ukranian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learn Ukranian.release.xcconfig"; path = "Target Support Files/Pods-Learn Ukranian/Pods-Learn Ukranian.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				772C5B232C6B395708BD9C37 /* Pods_Learn_Ukranian.framework in Frameworks */,
+				8AC3AAC78769AF7E0E48F7FC /* Pods_Learn_Ukranian.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,13 +83,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		049EC7DB23F0172800FBC176 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0473A88A23AE6EAE00CCA828 /* NetworkManager.swift */,
+				04E681CC23E021D7001F5881 /* AudioManager.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
 		04A55F3423ADE8710055E33D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				04A55F3523ADE8D90055E33D /* Categories.swift */,
-				0473A88A23AE6EAE00CCA828 /* NetworkManager.swift */,
 				041B05A423DD5CE900ABD0D6 /* BookmarksData.xcdatamodeld */,
-				04E681CC23E021D7001F5881 /* AudioManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -115,15 +122,16 @@
 		04CF4B1E23ACA00100ABBD4B /* Learn Ukranian */ = {
 			isa = PBXGroup;
 			children = (
-				04A55F3423ADE8710055E33D /* Model */,
-				04CF4B1F23ACA00100ABBD4B /* AppDelegate.swift */,
 				04CF4B2123ACA00100ABBD4B /* SceneDelegate.swift */,
+				04CF4B1F23ACA00100ABBD4B /* AppDelegate.swift */,
+				049EC7DB23F0172800FBC176 /* Model Controller */,
+				04A55F3423ADE8710055E33D /* Model */,
 				0473A88323AE123B00CCA828 /* Views */,
 				04CF4B2523ACA00B00ABBD4B /* Assets.xcassets */,
 				04CF4B2A23ACA00B00ABBD4B /* LaunchScreen.storyboard */,
 				04D933F423B2258600D81FC5 /* Constants.swift */,
-				0473A88823AE591200CCA828 /* GoogleService-Info.plist */,
 				04CF4B2D23ACA00B00ABBD4B /* Info.plist */,
+				04A52D9D24114D9500EB2D26 /* GoogleService-Info.plist */,
 				04CF4B2723ACA00B00ABBD4B /* Preview Content */,
 			);
 			path = "Learn Ukranian";
@@ -149,7 +157,7 @@
 		B102347119CCBA5E9C4D839C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				31D8FE04C13663CD128D7416 /* Pods_Learn_Ukranian.framework */,
+				22B0A0D3B736340B95C1A121 /* Pods_Learn_Ukranian.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,8 +173,8 @@
 				04CF4B1823ACA00100ABBD4B /* Sources */,
 				04CF4B1923ACA00100ABBD4B /* Frameworks */,
 				04CF4B1A23ACA00100ABBD4B /* Resources */,
-				92D0C309ABA7C5D6B7F71340 /* [CP] Embed Pods Frameworks */,
 				D06982E0E2985685D4BFBEF8 /* [CP] Copy Pods Resources */,
+				7362BEC64B5118D12E55C8CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,7 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04CF4B2C23ACA00B00ABBD4B /* LaunchScreen.storyboard in Resources */,
-				0473A88923AE591200CCA828 /* GoogleService-Info.plist in Resources */,
+				04A52D9E24114D9500EB2D26 /* GoogleService-Info.plist in Resources */,
 				04CF4B2923ACA00B00ABBD4B /* Preview Assets.xcassets in Resources */,
 				04CF4B2623ACA00B00ABBD4B /* Assets.xcassets in Resources */,
 			);
@@ -225,7 +233,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		92D0C309ABA7C5D6B7F71340 /* [CP] Embed Pods Frameworks */ = {
+		7362BEC64B5118D12E55C8CF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -444,11 +452,12 @@
 				DEVELOPMENT_TEAM = N3P8URX7UV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Learn Ukranian/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.learnukranian.1fritzgt.Learn-Ukranian";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.learnukranian.fritzgt.Learn-Ukranian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -465,11 +474,12 @@
 				DEVELOPMENT_TEAM = N3P8URX7UV;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Learn Ukranian/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.learnukranian.1fritzgt.Learn-Ukranian";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.learnukranian.fritzgt.Learn-Ukranian";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

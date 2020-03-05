@@ -9,12 +9,18 @@
 import SwiftUI
 
 struct CatView: View {
-    //Use to Create items in CoreData for Bookmarks
+    
+    //MARK: - Properties
+    
+    
+//    Use to Create items in CoreData for Bookmarks
     @Environment(\.managedObjectContext) var moc
     
     
     //Use for the add modal to be invoke or dismiss
-    @State private var show_modal: Bool = false
+    @State private var show_add_modal: Bool = false
+    
+    @State private var show_edit_modal: Bool = false
     
     //Initialting netWorkManager
     @ObservedObject var networkManager = NetworkManager()
@@ -26,21 +32,11 @@ struct CatView: View {
     //This will be use to create query
     let catId: String
     
-    @State private var booked = false
+    //MARK: - view
     
     var body: some View {
         List{ ForEach(networkManager.dataCat, id: \.self) {post in
             HStack{
-                //                Button to edit content
-                //                Button(action: {
-                //                    self.show_modal = true
-                //                }) {
-                //                     Image(systemName:post.image)
-                //                                       .font(.system(size: 35))
-                //                                       .aspectRatio(contentMode: .fill)
-                //                }.sheet(isPresented: self.$show_modal) {
-                //                    PostView(post: post )
-                //                }
                 Image(systemName:post.image)
                     .font(.system(size: 35))
                     .aspectRatio(contentMode: .fill)
@@ -57,10 +53,10 @@ struct CatView: View {
                 Spacer()
                 //3rd column inside cell
                 VStack{
-                    Image(systemName: self.booked ? "bookmark.fill" : "bookmark")
+                    //Bookmark post on image tap
+                    Image(systemName: "bookmark")
                         .onTapGesture {
-                            self.isBookmarked(for: post.id)
-                            
+
                             let newBookmark = Posts(context: self.moc)
                             newBookmark.id = post.id
                             newBookmark.image = post.image
@@ -68,7 +64,7 @@ struct CatView: View {
                             newBookmark.trans = post.trans
                             newBookmark.pron = post.pron
                             //Save data
-                            print("id \(post.id)")
+
                             do{
                                 try self.moc.save()
                             }catch{
@@ -76,7 +72,14 @@ struct CatView: View {
                             }
                     }
                     Spacer()
-                    Image(systemName: "square.and.pencil")
+                    //Edit mode
+                    Image(systemName: "square.and.pencil").onTapGesture {
+                        self.show_edit_modal = true
+//                        print(post)
+                    }.sheet(isPresented: self.$show_edit_modal) {
+                        PostView(post: post )
+                        
+                    }
                 }
             }.padding()//use to add padding since background is a rectangle
             //Creating a closure for delete
@@ -99,18 +102,15 @@ struct CatView: View {
         }
         .navigationBarItems(trailing:
             Button(action: {
-                self.show_modal = true
+                self.show_add_modal = true
             }) {
                 Image(systemName: "plus").imageScale(.large).padding()
-            }.sheet(isPresented: self.$show_modal) {
+            }.sheet(isPresented: self.$show_add_modal) {
                 PostView(post: nil)
             }
         )
             .navigationBarTitle(catId.capitalized)
     }
-    
-    
-    
     
     
     struct CatView_Previews: PreviewProvider {
@@ -119,16 +119,4 @@ struct CatView: View {
         }
     }
     
-    
-    //NOT IMPLEMENTED YET
-    func isBookmarked(for id:String) {
- 
-        for i in self.corePosts{
-            if id == i.id{
-                booked = true
-            }else{
-                booked = false
-            }
-        }
-    }
 }
